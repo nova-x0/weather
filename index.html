@@ -71,12 +71,11 @@
         weatherCheck(input.value);
       }
     });
-
     search.addEventListener("click", () => {
-      if (input.style.right === "-300px") {
-        input.style.right = "50px";
-      } else {
+      if (input.style.right === "50px") {
         input.style.right = "-300px";
+      } else {
+        input.style.right = "50px";
       }
     });
   </script>
@@ -93,8 +92,11 @@
   html,
   body {
     background-color: #15171b;
-  }                      
-  
+  }
+  /* .con{
+    width: 320px;
+    margin: auto;
+  } */
   .iconCityAndSearch {
     display: flex;
     align-items: center;
@@ -120,12 +122,13 @@
     transition: right 0.3s ease;
   }
   #input {
-    position: fixed;                    
+    position: fixed;
     right: -300px;
     transition: right 0.3s ease;
     z-index: 2;
     border: 0;
     padding: 5px;
+    overflow-x: hidden;
     border: 1px solid white;
   }
   #input:focus {
